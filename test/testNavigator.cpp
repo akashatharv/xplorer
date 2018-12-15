@@ -54,7 +54,7 @@ class TestClass {
  * @return void 
  */
     void publish(const geometry_msgs::Twist::ConstPtr& msg) {
-         twist = *msg;
+         ROS_INFO("Accessed");
     }
 };
 /**
