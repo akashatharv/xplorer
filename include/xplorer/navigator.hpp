@@ -46,8 +46,6 @@ THE POSSIBILITY OF SUCH DAMAGE.
  */
 class navigator {
  private:
-// Create object to initialize obstacleDetector class
-    obstacleDetector obsDet;
 // Create a ROS node handle
     ros::NodeHandle n2;
 // Publisher for publishing velocity to the turtlebot
@@ -70,6 +68,8 @@ class navigator {
  * @return void
  */
     void explore(int flag);
+// Create object to initialize obstacleDetector class
+    obstacleDetector obsDet;
 };
 
 #endif  // INCLUDE_XPLORER_NAVIGATOR_HPP_

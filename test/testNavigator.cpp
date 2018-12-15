@@ -99,8 +99,7 @@ TEST(TESTSuite, RobotNavigatorTest) {
        ros::NodeHandle n8;
        navigator navigator;
        EXPECT_NO_FATAL_FAILURE(navigator.explore(0));
-       obstacleDetector obsDet;
-       obsDet.setFlag(1);
+       navigator.obsDet.setFlag(true);
        EXPECT_NO_FATAL_FAILURE(navigator.explore(0));   
 }
 

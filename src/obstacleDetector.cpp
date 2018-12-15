@@ -103,11 +103,8 @@ bool obstacleDetector::collisionDetect() {
  * @param collision flag value
  * @return none
  */
-void obstacleDetector::setFlag (int val) {
-        if (val == 1) 
-                 collision = true;
-        else
-                 collision = false;
+void obstacleDetector::setFlag (bool val) { 
+        collision = val;
 }
 
 
