@@ -98,7 +98,17 @@ void obstacleDetector::sensorCallbackDist(const std_msgs
 bool obstacleDetector::collisionDetect() {
         return collision;
 }
-
+/**
+ * @brief Function for manually setting collision flag
+ * @param collision flag value
+ * @return none
+ */
+void obstacleDetector::setFlag (int val) {
+        if (val == 1) 
+                 collision = true;
+        else
+                 collision = false;
+}
 
 
 

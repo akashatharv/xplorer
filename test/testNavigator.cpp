@@ -69,7 +69,7 @@ TEST(TESTSuite, Navigator_Object_is_initialized) {
 /**
  * @brief Test to find if publisher for /mobile_base/commands/velocity is working
  * @param TESTSuite Gtest framework
- * @param Publish_Test Test name
+ * @param NavigatorPublishTest Test name
  */
 TEST(TESTSuite, NavigatorPublisherTest) {
         ros::NodeHandle n7;
@@ -82,7 +82,7 @@ TEST(TESTSuite, NavigatorPublisherTest) {
 /**
  * @brief Test to find if subscriber for /dist is working
  * @param TESTSuite Gtest framework
- * @param Subscribe_Test Test name
+ * @param NavigatorSubscribeTest Test name
  */
 TEST(TESTSuite, NavigatorSubscriberTest) {
         ros::NodeHandle n6;
@@ -90,12 +90,17 @@ TEST(TESTSuite, NavigatorSubscriberTest) {
         ros::WallDuration(1).sleep();
         EXPECT_EQ(pub3.getNumSubscribers(), 1);
 }
-
+/**
+ * @brief Test to find if the main function for robot movement is working
+ * @param TESTSuite Gtest framework
+ * @param RobotNavigatorTest Test name
+ */
 TEST(TESTSuite, RobotNavigatorTest) {
        ros::NodeHandle n8;
        navigator navigator;
        EXPECT_NO_FATAL_FAILURE(navigator.explore(0));
        obstacleDetector obsDet;
+       obsDet.setFlag(1);
        EXPECT_NO_FATAL_FAILURE(navigator.explore(0));   
 }
 

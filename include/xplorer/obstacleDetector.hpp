@@ -86,6 +86,12 @@ class obstacleDetector {
  * @return bool collision flag value
  */  
     bool collisionDetect();
+/**
+ * @brief Function for manually setting collision flag
+ * @param collision flag value
+ * @return none
+ */
+   void setFlag (int val);
 };
 
 #endif  // INCLUDE_XPLORER_OBSTACLEDETECTOR_HPP_
