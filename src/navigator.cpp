@@ -77,7 +77,7 @@ navigator::~navigator() {
  * @param None
  * @return void
  */
-void navigator::explore() {
+void navigator::explore(int flag) {
      // Publishing rate is set up at 10Hz
       ros::Rate loop_rate(10);
      // Condition to keep running, until ROS functions properly
@@ -93,6 +93,10 @@ void navigator::explore() {
                 ROS_INFO("No collision is expected, Moving straight");
                 msg.linear.x = 0.5;
                 msg.angular.z = 0.0;
+           }
+           if(flag == 0)
+           {
+                 break;
            }
      // The  updated velocity message is published
       pub2.publish(msg);

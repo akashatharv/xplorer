@@ -66,10 +66,10 @@ class navigator {
     ~navigator();
 /**
  * @brief Function to move the robot
- * @param None
+ * @param flag for the test
  * @return void
  */
-    void explore();
+    void explore(int flag);
 };
 
 #endif  // INCLUDE_XPLORER_NAVIGATOR_HPP_

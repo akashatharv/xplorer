@@ -90,3 +90,10 @@ TEST(TESTSuite, NavigatorSubscriberTest) {
         ros::WallDuration(1).sleep();
         EXPECT_EQ(pub3.getNumSubscribers(), 1);
 }
+
+TEST(TESTSuite, NavigatorTest) {
+       ros::NodeHandle n8;
+       navigator navigator;
+       navigator.explore(0);
+}
+
