@@ -83,24 +83,25 @@ void navigator::explore(int flag) {
      // Condition to keep running, until ROS functions properly
       while (ros::ok()) {
      // Obstacles are checked
-           if (obsDet.collisionDetect()) {
+           if (obsDet.collisionDetect() || flag == 0) {
      // Collision is expected, Robot is turned
                 ROS_WARN("Collision expected, turning to avoid obstacle");
                 msg.linear.x = 0.0;
                 msg.angular.z = 0.5;
-           } else {
+           } else if(~obsDet.collisionDetect()) {
                 // No obstacle detected, moving straight
                 ROS_INFO("No collision is expected, Moving straight");
                 msg.linear.x = 0.5;
                 msg.angular.z = 0.0;
            }
-           if(flag == 0 && obsDet.collisionDetect() == 1)
-           {
-                 break;
-           }
      // The  updated velocity message is published
       pub2.publish(msg);
       ros::spinOnce();
       loop_rate.sleep();
+
+      if(flag == 0)
+      {
+            break;
+      }
       }
 }
