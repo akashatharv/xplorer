@@ -91,9 +91,11 @@ TEST(TESTSuite, NavigatorSubscriberTest) {
         EXPECT_EQ(pub3.getNumSubscribers(), 1);
 }
 
-TEST(TESTSuite, NavigatorTest) {
+TEST(TESTSuite, RobotNavigatorTest) {
        ros::NodeHandle n8;
        navigator navigator;
-       navigator.explore(0);
+       EXPECT_NO_FATAL_FAILURE(navigator.explore(0));
+       obstacleDetector obsDet;
+       EXPECT_NO_FATAL_FAILURE(navigator.explore(0));   
 }
 

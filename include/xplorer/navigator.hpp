@@ -66,7 +66,7 @@ class navigator {
     ~navigator();
 /**
  * @brief Function to move the robot
- * @param flag for the test
+ * @param flag 
  * @return void
  */
     void explore(int flag);
