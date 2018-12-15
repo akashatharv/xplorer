@@ -94,7 +94,7 @@ void navigator::explore(int flag) {
                 msg.linear.x = 0.5;
                 msg.angular.z = 0.0;
            }
-           if(flag == 0)
+           if(flag == 0 && obsDet.collisionDetect() == 1)
            {
                  break;
            }
